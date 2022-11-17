@@ -53,27 +53,61 @@
 //    }
 //}
 
+//using System;
+//public class Animal
+//{
+//    public virtual void eat()
+//    {
+//        Console.WriteLine("Eating..");
+//    }
+//}
+//    public  class Dog : Animal
+//    {
+//        public override void eat()
+//        {
+//            Console.WriteLine("Eating bread..");
+//        }
+//    }
+
+//public class MethodOverriding
+//{
+//    public static void Main()
+//    {
+//        Dog d  = new Dog();
+//        d.eat();
+//    }
+//}
+
 using System;
-public class Animal
+using System.Drawing;
+
+public abstract class shape
 {
-    public virtual void eat()
+    public abstract void draw();
+
+    }
+public class rectangle : shape
+{
+    public override void draw()
     {
-        Console.WriteLine("Eating..");
+     Console.WriteLine("rectangle shape");
     }
 }
-    public  class Dog : Animal
+public class Circle : shape
+{
+    public override void draw()
     {
-        public override void eat()
-        {
-            Console.WriteLine("Eating bread..");
-        }
+        Console.WriteLine("drawing circle...");
     }
-
-public class MethodOverriding
+}
+public class TestAbstract
 {
     public static void Main()
     {
-        Dog d  = new Dog();
-        d.eat();
+        shape s;
+        s = new rectangle();
+        s.draw();
+        s = new Circle();
+        s.draw();
     }
 }
