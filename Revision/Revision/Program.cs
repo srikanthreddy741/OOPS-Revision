@@ -78,36 +78,70 @@
 //    }
 //}
 
+//using System;
+//using System.Drawing;
+
+//public abstract class shape
+//{
+//    public abstract void draw();
+
+//    }
+//public class rectangle : shape
+//{
+//    public override void draw()
+//    {
+//     Console.WriteLine("rectangle shape");
+//    }
+//}
+//public class Circle : shape
+//{
+//    public override void draw()
+//    {
+//        Console.WriteLine("drawing circle...");
+//    }
+//}
+//public class TestAbstract
+//{
+//    public static void Main()
+//    {
+//        shape s;
+//        s = new rectangle();
+//        s.draw();
+//        s = new Circle();
+//        s.draw();
+//    }
+//}
+
+
 using System;
-using System.Drawing;
 
-public abstract class shape
+public interface drawable
 {
-    public abstract void draw();
-
-    }
-public class rectangle : shape
+    void draw();
+}
+public class Rectangle : drawable
 {
-    public override void draw()
+    public void draw()
     {
-     Console.WriteLine("rectangle shape");
+        Console.WriteLine("drawing Rectangle");
     }
 }
-public class Circle : shape
+public class circle: drawable
 {
-    public override void draw()
+    public void draw()
     {
-        Console.WriteLine("drawing circle...");
+        Console.WriteLine("drawing circle");
     }
 }
-public class TestAbstract
-{
+
+   public class testinterface
+    {
     public static void Main()
-    {
-        shape s;
-        s = new rectangle();
-        s.draw();
-        s = new Circle();
-        s.draw();
-    }
+{
+        drawable d;
+        d=new Rectangle();
+        d.draw();
+        d=new circle(); 
+        d.draw();
+}
 }
