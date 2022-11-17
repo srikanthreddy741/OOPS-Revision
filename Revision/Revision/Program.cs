@@ -113,35 +113,56 @@
 //}
 
 
+//using System;
+
+//public interface drawable
+//{
+//    void draw();
+//}
+//public class Rectangle : drawable
+//{
+//    public void draw()
+//    {
+//        Console.WriteLine("drawing Rectangle");
+//    }
+//}
+//public class circle: drawable
+//{
+//    public void draw()
+//    {
+//        Console.WriteLine("drawing circle");
+//    }
+//}
+
+//   public class testinterface
+//    {
+//    public static void Main()
+//{
+//        drawable d;
+//        d=new Rectangle();
+//        d.draw();
+//        d=new circle(); 
+//        d.draw();
+//}
+//}
+
+
 using System;
 
-public interface drawable
+namespace Revision
 {
-    void draw();
-}
-public class Rectangle : drawable
-{
-    public void draw()
+    public class program
     {
-        Console.WriteLine("drawing Rectangle");
-    }
-}
-public class circle: drawable
-{
-    public void draw()
-    {
-        Console.WriteLine("drawing circle");
-    }
-}
+       public static void Main(string[] args)
+        {
+            //setting
+            student student = new student();
+            student.Id = "407";
+            student.Name = "srikanth";
+            student.Email = "b@gmail.com";
 
-   public class testinterface
-    {
-    public static void Main()
-{
-        drawable d;
-        d=new Rectangle();
-        d.draw();
-        d=new circle(); 
-        d.draw();
-}
+            //getting
+            Console.WriteLine("Id=" + student.Id);
+        }
+    }
 }
