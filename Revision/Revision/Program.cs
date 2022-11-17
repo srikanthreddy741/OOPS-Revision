@@ -29,26 +29,51 @@
 //    }
 //}
 
+//using System;
+
+
+//public class call
+//{
+//    public static int add(int a, int b)
+//    {
+//        return a + b;
+//    }
+//    public static int add(int a, int b, int c)
+//    {
+//        return a + b + c;
+//    }
+//}
+
+//public class methodoverloading
+//{
+//    public static void Main()
+//    {
+//        Console.WriteLine(call.add(20, 48));
+//        Console.WriteLine(call.add(15, 43, 65));
+//    }
+//}
+
 using System;
-
-
-public class call
+public class Animal
 {
-    public static int add(int a, int b)
+    public virtual void eat()
     {
-        return a + b;
-    }
-    public static int add(int a, int b, int c)
-    {
-        return a + b + c;
+        Console.WriteLine("Eating..");
     }
 }
+    public  class Dog : Animal
+    {
+        public override void eat()
+        {
+            Console.WriteLine("Eating bread..");
+        }
+    }
 
-public class methodoverloading
+public class MethodOverriding
 {
     public static void Main()
     {
-        Console.WriteLine(call.add(20, 48));
-        Console.WriteLine(call.add(15, 43, 65));
+        Dog d  = new Dog();
+        d.eat();
     }
 }
