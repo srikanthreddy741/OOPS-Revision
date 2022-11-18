@@ -271,19 +271,38 @@
 
 using System;
 
-public class LinkedList
+//public class LinkedList
+//{
+//    public static void Main(string[] args)
+//    {
+//        var names= new LinkedList<string>();
+//        names.AddLast("kanth");
+//        names.AddLast("reddy");
+//        names.AddLast("sri");
+//        names.AddFirst("sri");
+
+//        foreach(var name in names)
+//        {
+//            Console.WriteLine(name);
+//        }
+//    }
+//}
+
+using System;
+
+public class sorteddictionary
 {
     public static void Main(string[] args)
     {
-        var names= new LinkedList<string>();
-        names.AddLast("kanth");
-        names.AddLast("reddy");
-        names.AddLast("sri");
-        names.AddFirst("sri");
+        SortedList<string,string> names=new SortedList<string,string>();
+        names.Add("2", "Sri");
+        names.Add("4","Reddy");
+        names.Add("1","Bandari");
+        names.Add("3", "kanth");
 
-        foreach(var name in names)
+        foreach(KeyValuePair<string,string> kv in names)
         {
-            Console.WriteLine(name);
+            Console.WriteLine(kv.Key +" " + kv.Value);
         }
     }
 }
