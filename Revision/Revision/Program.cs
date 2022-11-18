@@ -249,20 +249,39 @@
 //    }
 //}
 
+//using System;
+
+//public class Hashset
+//{
+//    public static void Main(string[] args)
+//    {
+//        var names = new HashSet<string>();
+//        names.Add("sri");
+//        names.Add("ram");
+//        names.Add("reddy");
+//        names.Add("sri");
+
+
+//    foreach(var name in names)
+//        {
+//            Console.WriteLine(name);
+//        }
+//    }
+//}
+
 using System;
 
-public class Hashset
+public class LinkedList
 {
     public static void Main(string[] args)
     {
-        var names = new HashSet<string>();
-        names.Add("sri");
-        names.Add("ram");
-        names.Add("reddy");
-        names.Add("sri");
+        var names= new LinkedList<string>();
+        names.AddLast("kanth");
+        names.AddLast("reddy");
+        names.AddLast("sri");
+        names.AddFirst("sri");
 
-
-    foreach(var name in names)
+        foreach(var name in names)
         {
             Console.WriteLine(name);
         }
