@@ -227,24 +227,44 @@
 //    }
 //}
 
+//using System;
+
+//public class Queue
+//{
+//    public static void Main(string[] args)
+//    {
+//        Queue<string> names= new Queue<string>();
+//        names.Enqueue("sri");
+//        names.Enqueue("ram");
+//        names.Enqueue("reddy");
+//        names.Enqueue("kanth");
+
+//        foreach(string name in names)
+//        {
+//            Console.WriteLine(name);
+//        }
+//        Console.WriteLine("peek element:"+names.Peek());
+//        Console.WriteLine("Dequeue :"+names.Dequeue());
+//        Console.WriteLine("after Dequeue:" + names.Peek());
+//    }
+//}
+
 using System;
 
-public class Queue
+public class Hashset
 {
     public static void Main(string[] args)
     {
-        Queue<string> names= new Queue<string>();
-        names.Enqueue("sri");
-        names.Enqueue("ram");
-        names.Enqueue("reddy");
-        names.Enqueue("kanth");
+        var names = new HashSet<string>();
+        names.Add("sri");
+        names.Add("ram");
+        names.Add("reddy");
+        names.Add("sri");
 
-        foreach(string name in names)
+
+    foreach(var name in names)
         {
             Console.WriteLine(name);
         }
-        Console.WriteLine("peek element:"+names.Peek());
-        Console.WriteLine("Dequeue :"+names.Dequeue());
-        Console.WriteLine("after Dequeue:" + names.Peek());
     }
 }
