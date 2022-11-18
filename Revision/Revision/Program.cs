@@ -184,23 +184,45 @@
 //    }
 //}
 
+//using System;
+
+//public class list
+//{
+//    public static void Main(string[] args)
+//    {
+//        //creating list of strings
+//      //  var names=new List<string>() {"sri", "ram", "reddy"};
+//        var names=new List<string>();
+//        names.Add("sri");
+//        names.Add("ram");
+//        names.Add("reddy");
+
+//        //iterate through the list
+//        foreach(var name in names)
+//        {
+//            Console.WriteLine(name);
+//        }
+//    }
+//}
+
 using System;
 
-public class list
+public class Stack
 {
     public static void Main(string[] args)
     {
-        //creating list of strings
-        //  var names=new List<string>() {"sri", "ram", "reddy"};
-        var names = new List<string>();
-        names.Add("sri");
-        names.Add("ram");
-        names.Add("reddy");
+        Stack<string> names = new Stack<string>();
+        names.Push ("sri") ;
+        names.Push("ram");
+        names.Push("reddy");
+        names.Push("kanth");
 
-        //iterate through the list
-        foreach (var name in names)
+        foreach(string name in names)
         {
             Console.WriteLine(name);
         }
+        Console.WriteLine("peek element:" + names.Peek());
+        Console.WriteLine("pop element:" + names.Pop());
+        Console.WriteLine("after pop,peek element:" + names.Peek());
     }
 }
