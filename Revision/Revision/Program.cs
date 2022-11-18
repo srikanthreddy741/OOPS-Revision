@@ -147,22 +147,60 @@
 //}
 
 
+//using System;
+
+//namespace Revision
+//{
+//    public class program
+//    {
+//       public static void Main(string[] args)
+//        {
+//            //setting
+//            student student = new student();
+//            student.Id = "407";
+//            student.Name = "srikanth";
+//            student.Email = "b@gmail.com";
+
+//            //getting
+//            Console.WriteLine("Id=" + student.Id);
+//        }
+//    }
+//}
+
+//using System;
+//public class Encapsulation
+//{
+//    public static void Main(string[] args)
+//    {
+//        try
+//        {
+//            int a = 10;
+//            int b = 0;
+//            int x = a / b;
+//        }
+//        catch (Exception e) { Console.WriteLine(e); }
+
+//        Console.WriteLine("Rest of the code");
+//    }
+//}
+
 using System;
 
-namespace Revision
+public class list
 {
-    public class program
+    public static void Main(string[] args)
     {
-       public static void Main(string[] args)
-        {
-            //setting
-            student student = new student();
-            student.Id = "407";
-            student.Name = "srikanth";
-            student.Email = "b@gmail.com";
+        //creating list of strings
+        //  var names=new List<string>() {"sri", "ram", "reddy"};
+        var names = new List<string>();
+        names.Add("sri");
+        names.Add("ram");
+        names.Add("reddy");
 
-            //getting
-            Console.WriteLine("Id=" + student.Id);
+        //iterate through the list
+        foreach (var name in names)
+        {
+            Console.WriteLine(name);
         }
     }
 }
