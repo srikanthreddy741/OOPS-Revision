@@ -205,24 +205,46 @@
 //    }
 //}
 
+//using System;
+
+//public class Stack
+//{
+//    public static void Main(string[] args)
+//    {
+//        Stack<string> names = new Stack<string>();
+//        names.Push ("sri") ;
+//        names.Push("ram");
+//        names.Push("reddy");
+//        names.Push("kanth");
+
+//        foreach(string name in names)
+//        {
+//            Console.WriteLine(name);
+//        }
+//        Console.WriteLine("peek element:" + names.Peek());
+//        Console.WriteLine("pop element:" + names.Pop());
+//        Console.WriteLine("after pop,peek element:" + names.Peek());
+//    }
+//}
+
 using System;
 
-public class Stack
+public class Queue
 {
     public static void Main(string[] args)
     {
-        Stack<string> names = new Stack<string>();
-        names.Push ("sri") ;
-        names.Push("ram");
-        names.Push("reddy");
-        names.Push("kanth");
+        Queue<string> names= new Queue<string>();
+        names.Enqueue("sri");
+        names.Enqueue("ram");
+        names.Enqueue("reddy");
+        names.Enqueue("kanth");
 
         foreach(string name in names)
         {
             Console.WriteLine(name);
         }
-        Console.WriteLine("peek element:" + names.Peek());
-        Console.WriteLine("pop element:" + names.Pop());
-        Console.WriteLine("after pop,peek element:" + names.Peek());
+        Console.WriteLine("peek element:"+names.Peek());
+        Console.WriteLine("Dequeue :"+names.Dequeue());
+        Console.WriteLine("after Dequeue:" + names.Peek());
     }
 }
