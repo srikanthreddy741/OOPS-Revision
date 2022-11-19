@@ -386,24 +386,56 @@ using System;
 //    }
 //}
 
-using System;
+//using System;
 
-public class MltiDimension
+//public class MltiDimension
+//{
+//    public static void Main(string[] args)
+//    {
+//        int[,] arr = new int[3,3];
+//        arr[0, 1] = 10;
+//        arr[1,2]=2;
+//        arr[2, 0] = 3;
+
+//        for(int i = 0; i < 3; i++)
+//        {
+//            for(int j = 0; j < 3; j++)
+//            {
+//                Console.WriteLine(arr[i,j]);
+//            }
+//            Console.WriteLine();
+//        }
+//    }
+//}
+
+using System.Text.RegularExpressions;
+
+namespace RegularExpression
 {
-    public static void Main(string[] args)
+    class program
     {
-        int[,] arr = new int[3,3];
-        arr[0,1]=1;
-        arr[1,2]=2;
-        arr[2, 0] = 3;
-
-        for(int i = 0; i < 3; i++)
+        public static void Main(string[] args)
         {
-            for(int j = 0; j < 3; j++)
+
+            try
             {
-                Console.WriteLine(arr[i,j]);
+                Console.WriteLine("Enter Name: ");
+                string name = Console.ReadLine();
+                string pattrn = "^[A-Z]{1,}[A-Za-z]{7,}$";
+                if (Regex.IsMatch(name, pattrn))
+                {
+                    Console.WriteLine("valid name " + name);
+                }
+                else
+                {
+                    Console.WriteLine("not valid");
+                };
+
             }
-            Console.WriteLine();
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
