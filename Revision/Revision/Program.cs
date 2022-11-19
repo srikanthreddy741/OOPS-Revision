@@ -288,21 +288,100 @@ using System;
 //    }
 //}
 
+//using System;
+
+//public class sorteddictionary
+//{
+//    public static void Main(string[] args)
+//    {
+//        SortedList<string,string> names=new SortedList<string,string>();
+//        names.Add("2", "Sri");
+//        names.Add("4","Reddy");
+//        names.Add("1","Bandari");
+//        names.Add("3", "kanth");
+
+//        foreach(KeyValuePair<string,string> kv in names)
+//        {
+//            Console.WriteLine(kv.Key +" " + kv.Value);
+//        }
+//    }
+//}
+
+//namespace FindMaximumNumber
+//{
+//    internal class MaximumNumberCheck
+//    {
+//        public int MaximumIntegerNumber(int firstvalue, int secondvalue, int thirdvalue)
+//        {
+//            if (firstvalue.CompareTo(secondvalue) > 0 && firstvalue.CompareTo(thirdvalue) > 0)
+//            {
+//                return firstvalue;
+//            }
+//            if (secondvalue.CompareTo(firstvalue) > 0 && secondvalue.CompareTo(thirdvalue) > 0)
+//            {
+//                return secondvalue;
+//            }
+//            if (thirdvalue.CompareTo(firstvalue) > 0 && thirdvalue.CompareTo(secondvalue) > 0)
+//            {
+//                return thirdvalue;
+//            }
+//            throw new Exception("first value,second value, & third value are same");
+//        }
+//        public double MaximumFloatNumber(double firstvalue, double secondvalue, double thirdvalue)
+//        {
+//            if (firstvalue.CompareTo(secondvalue) > 0 && firstvalue.CompareTo(thirdvalue) > 0)
+//            {
+//                return firstvalue;
+//            }
+//            if (secondvalue.CompareTo(firstvalue) > 0 && secondvalue.CompareTo(thirdvalue) > 0)
+//            {
+//                return secondvalue;
+//            }
+//            if (thirdvalue.CompareTo(firstvalue) > 0 && thirdvalue.CompareTo(secondvalue) > 0)
+//            {
+//                return thirdvalue;
+//            }
+//            throw new Exception("first value,second value, & third value are same");
+//        }
+//        public string MaximumStringNumber(string firststring, string secondstring, string thirdstring)
+//        {
+//            if (firststring.CompareTo(secondstring) > 0 && firststring.CompareTo(thirdstring) > 0 ||
+//                firststring.CompareTo(secondstring) >= 0 && firststring.CompareTo(thirdstring) > 0 ||
+//                firststring.CompareTo(secondstring) > 0 && firststring.CompareTo(thirdstring) >= 0)
+//            {
+//                return firststring;
+//            }
+//            if (secondstring.CompareTo(firststring) > 0 && secondstring.CompareTo(thirdstring) > 0 ||
+//                secondstring.CompareTo(firststring) >= 0 && secondstring.CompareTo(thirdstring) > 0 ||
+//                secondstring.CompareTo(firststring) > 0 && secondstring.CompareTo(thirdstring) >= 0)
+//            {
+//                return secondstring;
+//            }
+//            if (thirdstring.CompareTo(firststring) > 0 && thirdstring.CompareTo(secondstring) > 0 ||
+//                thirdstring.CompareTo(firststring) >= 0 && thirdstring.CompareTo(secondstring) > 0 ||
+//                thirdstring.CompareTo(firststring) > 0 && thirdstring.CompareTo(secondstring) >= 0)
+//            {
+//                return thirdstring;
+//            }
+//            throw new Exception("first string,second string, & third string are same");
+//        }
+//    }
+//}
+
 using System;
 
-public class sorteddictionary
+public class singleDimension
 {
     public static void Main(string[] args)
     {
-        SortedList<string,string> names=new SortedList<string,string>();
-        names.Add("2", "Sri");
-        names.Add("4","Reddy");
-        names.Add("1","Bandari");
-        names.Add("3", "kanth");
+        int[] arr =new int[5];
+        arr[0] = 10;
+        arr[2] = 30;
+        arr[4] = 50;
 
-        foreach(KeyValuePair<string,string> kv in names)
+        for (int i = 0; i<arr.Length; i++)
         {
-            Console.WriteLine(kv.Key +" " + kv.Value);
+            Console.WriteLine(arr[i]);
         }
     }
 }
