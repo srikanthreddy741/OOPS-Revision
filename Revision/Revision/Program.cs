@@ -368,20 +368,42 @@ using System;
 //    }
 //}
 
+//using System;
+
+//public class singleDimension
+//{
+//    public static void Main(string[] args)
+//    {
+//        int[] arr =new int[5];
+//        arr[0] = 10;
+//        arr[2] = 30;
+//        arr[4] = 50;
+
+//        for (int i = 0; i<arr.Length; i++)
+//        {
+//            Console.WriteLine(arr[i]);
+//        }
+//    }
+//}
+
 using System;
 
-public class singleDimension
+public class MltiDimension
 {
     public static void Main(string[] args)
     {
-        int[] arr =new int[5];
-        arr[0] = 10;
-        arr[2] = 30;
-        arr[4] = 50;
+        int[,] arr = new int[3,3];
+        arr[0,1]=1;
+        arr[1,2]=2;
+        arr[2, 0] = 3;
 
-        for (int i = 0; i<arr.Length; i++)
+        for(int i = 0; i < 3; i++)
         {
-            Console.WriteLine(arr[i]);
+            for(int j = 0; j < 3; j++)
+            {
+                Console.WriteLine(arr[i,j]);
+            }
+            Console.WriteLine();
         }
     }
 }
