@@ -408,34 +408,102 @@ using System;
 //    }
 //}
 
-using System.Text.RegularExpressions;
+//using System.Text.RegularExpressions;
 
-namespace RegularExpression
-{
-    class program
-    {
-        public static void Main(string[] args)
-        {
+//namespace RegularExpression
+//{
+//    class program
+//    {
+//        public static void Main(string[] args)
+//        {
 
-            try
-            {
-                Console.WriteLine("Enter Name: ");
-                string name = Console.ReadLine();
-                string pattrn = "^[A-Z]{1,}[A-Za-z]{7,}$";
-                if (Regex.IsMatch(name, pattrn))
-                {
-                    Console.WriteLine("valid name " + name);
-                }
-                else
-                {
-                    Console.WriteLine("not valid");
-                };
+//            try
+//            {
+//                Console.WriteLine("Enter Name: ");
+//                string name = Console.ReadLine();
+//                string pattrn = "^[A-Z]{1,}[A-Za-z]{7,}$";
+//                if (Regex.IsMatch(name, pattrn))
+//                {
+//                    Console.WriteLine("valid name " + name);
+//                }
+//                else
+//                {
+//                    Console.WriteLine("not valid");
+//                };
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-    }
-}
+//            }
+//            catch (Exception)
+//            {
+//                throw;
+//            }
+//        }
+//    }
+//}
+
+
+//using System;
+//using System.Linq;
+
+//public class Program
+//{
+//    public delegate string Reverse(string s);
+
+//    static string ReverseString(string s)
+//    {
+//        return new string(s.Reverse().ToArray());
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        Reverse rev = ReverseString;
+
+//        Console.WriteLine(rev("srikanth reddy"));
+//    }
+//}
+
+//using System;
+//using System.Linq;
+
+//public class Program
+//{
+//    static string ReverseString(string s)
+//    {
+//        return new string(s.Reverse().ToArray());
+//    }
+
+//    static void Main(string[] args)
+//    {
+//        Func<string, string> rev = ReverseString;
+
+//        Console.WriteLine(rev("srikanth reddy"));
+//    }
+//}
+
+//using System;
+//using System.IO;
+
+//namespace FileIOApplication
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            FileStream F = new FileStream("test.dat", FileMode.OpenOrCreate,
+//               FileAccess.ReadWrite);
+
+//            for (int i = 1; i <= 20; i++)
+//            {
+//                F.WriteByte((byte)i);
+//            }
+//            F.Position = 0;
+//            for (int i = 0; i <= 20; i++)
+//            {
+//                Console.Write(F.ReadByte() + " ");
+//            }
+//            F.Close();
+//            Console.ReadKey();
+//        }
+//    }
+//}
+
+
