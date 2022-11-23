@@ -9,5 +9,7 @@ namespace BusinessLayer.Interface
     {
         public AddressBookModel Create(AddressBookModel model);
         public List<GetAddressBookModel> GetAddressBook();
+        public AddressBookModel UpdateAddressBook(long Id, AddressBookModel model);
+
     }
 }

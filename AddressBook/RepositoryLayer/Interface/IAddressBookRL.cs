@@ -10,5 +10,7 @@ namespace RepositoryLayer.Interface
     {
         public AddressBookModel Create(AddressBookModel model);
         public List<GetAddressBookModel> GetAddressBook();
+        public AddressBookModel UpdateaddressBook(long Id, AddressBookModel model);
+
     }
 }
