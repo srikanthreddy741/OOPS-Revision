@@ -23,11 +23,11 @@ namespace AddressBook.Controllers
                 var result = addressBL.CreateAddressBook(model);
                 if (result != null)
                 {
-                    return Ok(new { success = true, message = "Addressbook created", data = result });
+                    return Ok(new { success = true, message = "AddressBook Created", data = result });
                 }
                 else
                 {
-                    return BadRequest(new { success = false, message = "failed" });
+                    return BadRequest(new { success = false, message = "AddressBook is Invalid" });
                 }
             }
             catch (Exception)
