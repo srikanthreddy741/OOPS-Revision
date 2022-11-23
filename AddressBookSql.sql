@@ -13,16 +13,16 @@ State varchar(100),
 Pincode varchar(100)
 )
 
-Create procedure SpAddressBook
+create procedure SpAddressBook
 (
-@FirstName varchar(255),
-@LastName varchar(255),
-@Email varchar(255),
-@Mobile varchar(255),
-@Address varchar(255),
-@City varchar(255),
-@State varchar(255),
-@Pincode varchar(255)
+@FirstName varchar(150),
+@LastName varchar(150),
+@Email varchar(150),
+@Mobile varchar(150),
+@Address varchar(150),
+@City varchar(150),
+@State varchar(150),
+@Pincode varchar(150)
 )
 as
 begin

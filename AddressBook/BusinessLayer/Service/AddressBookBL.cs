@@ -15,16 +15,28 @@ namespace BusinessLayer.Service
             this.addressRL = addressRL;
         }
 
-        public AddressBookModel CreateAddressBook(AddressBookModel model)
+        public AddressBookModel Create(AddressBookModel model)
         {
             try
             {
-                return addressRL.CreateAddressBook(model);
+                return addressRL.Create(model);
             }
             catch (Exception)
             {
                 throw;
             }
         }
+        public List<GetAddressBookModel> GetAddressBook()
+        {
+            try
+            {
+                return addressRL.GetAddressBook();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace RepositoryLayer.Service
         {
             ConnectionString = configuration.GetConnectionString("Addressbook1");
         }
-        public AddressBookModel CreateAddressBook(AddressBookModel model)
+        public AddressBookModel Create(AddressBookModel model)
         {
             SqlConnection connection = new SqlConnection(ConnectionString);
             try
@@ -42,6 +42,37 @@ namespace RepositoryLayer.Service
                 {
                     return null;
                 }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public List<GetAddressBookModel> GetAddressBook()
+        {
+            List<GetAddressBookModel> result = new List<GetAddressBookModel>();
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            try
+            {
+                connection.Open();
+                SqlCommand com = new SqlCommand("getAddressBook", connection);
+                com.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    GetAddressBookModel get = new GetAddressBookModel();
+                    get.Id = reader.GetInt32("Id");
+                    get.FirstName = reader.GetString("FirstName");
+                    get.LastName = reader.GetString("LastName");
+                    get.Email = reader.GetString("Email");
+                    get.Mobile = reader.GetString("Mobile");
+                    get.Address = reader.GetString("Address");
+                    get.City = reader.GetString("City");
+                    get.State = reader.GetString("State");
+                    get.Pincode = reader.GetString("Pincode");
+                    result.Add(get);
+                }
+                return result;
             }
             catch (Exception)
             {

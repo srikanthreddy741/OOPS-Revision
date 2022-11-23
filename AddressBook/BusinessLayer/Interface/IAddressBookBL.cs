@@ -7,6 +7,7 @@ namespace BusinessLayer.Interface
 {
     public interface IAddressBookBL
     {
-        public AddressBookModel CreateAddressBook(AddressBookModel model);
+        public AddressBookModel Create(AddressBookModel model);
+        public List<GetAddressBookModel> GetAddressBook();
     }
 }
