@@ -7,6 +7,8 @@ using System.Data;
 using System.Text;
 using CommonLayer.Model;
 using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
 
 namespace RepositoryLayer.Service
 {
