@@ -33,6 +33,8 @@ namespace AddressBook
             services.AddControllers();
             services.AddTransient<IAddressBookRL, AddressBookRL>();
             services.AddTransient<IAddressBookBL, AddressBookBL>();
+            services.AddTransient<IUserBL, UserBL>();
+            services.AddTransient<IUserRL, UserRL>();
 
             services.AddSwaggerGen();
             services.AddSwaggerGen(c =>

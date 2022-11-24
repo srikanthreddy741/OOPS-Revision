@@ -30,3 +30,33 @@ insert into AddressBook1 values(@FirstName,@LastName,@Email,@Mobile,@Address,@Ci
 end
 
 select * from Addressbook1
+
+create procedure getAddressBook
+as
+begin
+select * from Addressbook1
+end
+
+alter procedure UpdateAddressBook(
+@Id int,
+@FirstName varchar(100),
+@LastName varchar(100),
+@Email varchar(100),
+@Mobile varchar(100),
+@Address varchar(100),
+@City varchar(100),
+@State varchar(100),
+@Pincode varchar(100)
+)
+as
+begin
+update AddressBook1 set FirstName=@FirstName, LastName=@LastName, Email=@Email, Mobile=@Mobile, Address=@Address, City=@City, State=@State, Pincode=@Pincode where Id=@Id;
+end
+
+create procedure DeleteAddressBook(
+@Id int
+)
+as
+begin
+delete from AddressBook1 where Id=@Id;
+end

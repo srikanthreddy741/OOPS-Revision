@@ -79,5 +79,18 @@ namespace AddressBook.Controllers
 
 
         }
+        [HttpDelete("Delete")]
+        public IActionResult DeleteAddressBook(long Id)
+        {
+            var result = addressBL.DeleteAddressBook(Id);
+            if (result != null)
+            {
+                return Ok(new { success = true, message = "Address Book Deleted Successfully" });
+            }
+            else
+            {
+                return BadRequest(new { success = false, message = "Unsuccessfull" });
+            }
+        }
     }
 }
