@@ -60,3 +60,33 @@ as
 begin
 delete from AddressBook1 where Id=@Id;
 end
+
+
+
+
+create table UserRegister(
+Id int primary key Identity(1,1),
+FirstName varchar(255),
+LastName varchar(255),
+Email varchar(255),
+Password varchar(255)
+)
+
+create procedure SpUserRegister(
+@FirstName varchar(255),
+@LastName varchar(255),
+@Email varchar(255),
+@Password varchar(255)
+)
+as
+begin
+insert into UserRegister values(@FirstName,@LastName,@Email,@Password)
+end
+
+create procedure SpUserselect(
+@Email varchar(255)
+)
+as
+begin
+select * from UserRegister where Email=@Email;
+end
