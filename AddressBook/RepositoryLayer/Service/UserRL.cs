@@ -9,6 +9,7 @@ using CommonLayer.Model;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RepositoryLayer.Service
 {
@@ -117,6 +118,44 @@ namespace RepositoryLayer.Service
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        public string ForgetPassword(string Email)
+        {
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            try
+            {
+                long Id = 0;
+                SqlCommand cmd = new SqlCommand("SpUserselect", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Email", Email);
+                connection.Open();
+                var result = cmd.ExecuteNonQuery();
+                SqlDataReader sqlData = cmd.ExecuteReader();
+                //ForgetPasswordModel forgetPass = new ForgetPasswordModel();
+                 UserModel userRegisterModels = new UserModel();
+                if (sqlData.Read())
+                {
+                    //userRegisterModels.Id = sqlData.GetInt32("Id");
+                    userRegisterModels.Email = sqlData.GetString("Email");
+                    userRegisterModels.FirstName = sqlData.GetString("FirstName");
+                    userRegisterModels.LastName = sqlData.GetString("LastName");
+                }
+                if (userRegisterModels.Email != null)
+                {
+                    MSMQModel mSMQModel = new MSMQModel();
+                    var token = GenerateJWTToken(Email, Id);
+                    mSMQModel.sendData2Queue(token);
+                    return token.ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }
