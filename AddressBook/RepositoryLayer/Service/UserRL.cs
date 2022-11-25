@@ -135,10 +135,9 @@ namespace RepositoryLayer.Service
                  UserModel userRegisterModels = new UserModel();
                 if (sqlData.Read())
                 {
-                    //userRegisterModels.Id = sqlData.GetInt32("Id");
+                  
                     userRegisterModels.Email = sqlData.GetString("Email");
-                    userRegisterModels.FirstName = sqlData.GetString("FirstName");
-                    userRegisterModels.LastName = sqlData.GetString("LastName");
+                  
                 }
                 if (userRegisterModels.Email != null)
                 {
