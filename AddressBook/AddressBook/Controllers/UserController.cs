@@ -77,7 +77,7 @@ namespace AddressBook.Controllers
                 throw;
             }
         }
-        [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+        //[Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut]
         [Route("ResetPassword")]
         public ActionResult ResetPassword(string Password, string ConfirmPassword)

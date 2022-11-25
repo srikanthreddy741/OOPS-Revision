@@ -82,7 +82,7 @@ as
 begin
 insert into UserRegister values(@FirstName,@LastName,@Email,@Password)
 end
-
+select * from UserRegister
 create procedure SpUserselect(
 @Email varchar(255)
 )

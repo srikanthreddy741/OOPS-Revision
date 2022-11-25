@@ -62,20 +62,15 @@ namespace RepositoryLayer.Service
                 cmd.Parameters.AddWithValue("@Email", userLogin.Email);
                 sqlConnection.Open();
                 var result = cmd.ExecuteNonQuery();
-                // sqlConnection.Close();
                 SqlDataReader Dr = cmd.ExecuteReader();
                 while (Dr.Read())
                 {
-                    string Name = Convert.ToString(Dr["FirstName"]);
                     string Email = Convert.ToString(Dr["Email"]);
-                    Id = Convert.ToInt32(Dr["Id"]);
+          
                     Password = Convert.ToString(Dr["Password"]);
-
-
                 }
                 sqlConnection.Close();
                 var pass = Decrypt (Password);
-                // var email = userLogin.Email;
                 if (pass == userLogin.Password)
                 {
 
