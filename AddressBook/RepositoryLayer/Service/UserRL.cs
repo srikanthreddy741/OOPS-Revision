@@ -10,6 +10,7 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace RepositoryLayer.Service
 {
@@ -31,7 +32,7 @@ namespace RepositoryLayer.Service
                 command.Parameters.AddWithValue("@FirstName", userRegister.FirstName);
                 command.Parameters.AddWithValue("@LastName", userRegister.LastName);
                 command.Parameters.AddWithValue("@Email", userRegister.Email);
-                command.Parameters.AddWithValue("@Password", userRegister.Password);
+                command.Parameters.AddWithValue("@Password", Encrypt (userRegister.Password));
                 connection.Open();
                 var result = command.ExecuteNonQuery();
                 connection.Close();
@@ -73,7 +74,7 @@ namespace RepositoryLayer.Service
 
                 }
                 sqlConnection.Close();
-                var pass = Password;
+                var pass = Decrypt (Password);
                 // var email = userLogin.Email;
                 if (pass == userLogin.Password)
                 {
@@ -176,6 +177,21 @@ namespace RepositoryLayer.Service
 
                 throw;
             }
+        }
+        public string Encrypt(string password)
+        {
+            if (string.IsNullOrEmpty(password)) return "";
+            password += "";
+            var passwordBytes = Encoding.UTF8.GetBytes(password);
+            return Convert.ToBase64String(passwordBytes);
+        }
+        public string Decrypt(string base64EncodeData)
+        {
+            if (string.IsNullOrEmpty(base64EncodeData)) return "";
+            var base64EncoddeBytes = Convert.FromBase64String(base64EncodeData);
+            var result = Encoding.UTF8.GetString(base64EncoddeBytes);
+            result = result.Substring(0, result.Length);
+            return result;
         }
     }
 }
