@@ -3,6 +3,7 @@ using CommonLayer.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Security.Claims;
 
 namespace AddressBook.Controllers
 {
@@ -73,6 +74,29 @@ namespace AddressBook.Controllers
             catch (Exception)
             {
                 throw;
+            }
+        }
+        [HttpPut]
+        [Route("ResetPassword")]
+        public ActionResult ResetPassword(string Password, string ConfirmPassword)
+        {
+            try
+            {
+               // var Email = User.FindFirst(ClaimTypes.Email).Value.ToString();
+
+                if (userBL.ResetPassword(Password, ConfirmPassword))
+                {
+                    return Ok(new { success = true, message = "Reset Password is Succesfull" });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, message = "Reset Password Link Could Not Be Sent" });
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

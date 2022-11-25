@@ -132,7 +132,6 @@ namespace RepositoryLayer.Service
                 connection.Open();
                 var result = cmd.ExecuteNonQuery();
                 SqlDataReader sqlData = cmd.ExecuteReader();
-                //ForgetPasswordModel forgetPass = new ForgetPasswordModel();
                  UserModel userRegisterModels = new UserModel();
                 if (sqlData.Read())
                 {
@@ -155,6 +154,27 @@ namespace RepositoryLayer.Service
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+        public bool ResetPassword(string Password, string ConfirmPassword)
+        {
+            try
+            {
+                if (Password.Equals(ConfirmPassword))
+                {
+                     Password = Password;
+                   
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

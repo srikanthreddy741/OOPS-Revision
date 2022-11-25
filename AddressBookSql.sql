@@ -90,3 +90,11 @@ as
 begin
 select * from UserRegister where Email=@Email;
 end
+
+create procedure SpUserPassword(
+@password varchar(100)
+)
+as 
+begin
+select * from UserRegister where Password=@password;
+end
