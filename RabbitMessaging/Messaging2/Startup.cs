@@ -1,3 +1,5 @@
+using GreenPipes;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,28 @@ namespace Messaging2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMassTransit(x =>
+            {
+                x.AddConsumer<OrderConsumer>();
+
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+                {
+                    // configure health checks for this bus instance
+                    cfg.UseHealthCheck(provider);
+
+                    cfg.Host("rabbitmq://localhost");
+
+                    cfg.ReceiveEndpoint("order_queue", ep =>
+                    {
+                        ep.PrefetchCount = 16;
+                        ep.UseMessageRetry(r => r.Interval(2, 100));
+
+                        ep.ConfigureConsumer<OrderConsumer>(provider);
+                    });
+                }));
+            });
+
+            services.AddMassTransitHostedService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

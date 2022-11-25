@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,19 @@ namespace RabbitMessaging
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMassTransit(x =>
+            {
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+                {
+                    // configure health checks for this bus instance
+                    cfg.UseHealthCheck(provider);
+
+                    cfg.Host("rabbitmq://localhost");
+
+                }));
+            });
+
+            services.AddMassTransitHostedService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
